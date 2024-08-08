@@ -1,12 +1,9 @@
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Category = () => {
-  return (
-    <div>
-      Category
-      <Link to="/">Go to Home page</Link>
-    </div>
-  );
+  const { categoryId } = useParams();
+
+  return <div>Category {categoryId}</div>;
 };
 
 export default Category;

@@ -17,7 +17,7 @@ function App() {
       <Row>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/category/:id" element={<Category />} />
+          <Route path="/category/:categoryId" element={<Category />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
