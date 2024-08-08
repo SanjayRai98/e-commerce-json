@@ -1,3 +1,3 @@
 # E-Commerce site
 
-<h1>E-commerce Website fetch data from json file</h1>
+<h1>Fetch data from json file</h1>
