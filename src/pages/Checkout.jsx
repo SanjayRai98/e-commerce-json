@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Checkout = () => {
   return (
     <div>
-      Checkout
+      <h1>Checkout</h1>
       <Link to="/">Go to Home Page</Link>
     </div>
   );

@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
+import categories from './../database/categories.json';
 
 const Home = () => {
+  console.log({ categories });
+
   return (
     <div>
       Home
