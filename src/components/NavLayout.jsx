@@ -6,18 +6,6 @@ const NavLayout = () => {
     <Container>
       <Header>
         <Navbar appearance="inverse">
-          {/* <Nav>
-            <Nav.Item as="div">
-              <Link to="/">Home</Link>
-            </Nav.Item>
-          </Nav>
-
-          <Nav pullRight>
-            <Nav.Item as="div">
-              <Link to="/checkout">Checkout</Link>
-            </Nav.Item>
-          </Nav> */}
-
           <Nav>
             <Nav.Item as={Link} to="/">
               Home
