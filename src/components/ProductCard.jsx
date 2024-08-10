@@ -20,7 +20,10 @@ const ProductCard = ({
       <p>Price : {currency === 'USD' ? `$ ${price}` : `${price}`}</p>
       <p>Stock : {inStock ? 'Available' : 'Out of Stock'}</p>
       <p>Delivery to Your Location : {delivery ? 'Yes' : 'No'}</p>
-      <Button appearance="primary" onClick={() => handleAddToCard(id, price)}>
+      <Button
+        appearance="primary"
+        onClick={() => handleAddToCard(id, price, name)}
+      >
         Add to Cart
       </Button>
     </Row>

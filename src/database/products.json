@@ -1,11 +1,11 @@
 [
   {
     "id": "1a",
-    "name": "Ducky One 2",
+    "name": "Redragon K580 VATA",
     "price": 100,
     "currency": "USD",
     "delivery": false,
-    "thumbnail": "https://mechanicalkeyboards.com/shop/images/products/large_DKME1961ST-USPDZZT1_10.jpg",
+    "thumbnail": "https://m.media-amazon.com/images/I/71jPClBDPDL._AC_SY355_.jpg",
     "inStock": true,
     "categoryId": "fgsa2142fa"
   },
@@ -15,7 +15,7 @@
     "price": 140,
     "currency": "USD",
     "delivery": true,
-    "thumbnail": "https://mechanicalkeyboards.com/shop/images/products/large_2790_SakuraTKL_1.jpg",
+    "thumbnail": "https://m.media-amazon.com/images/I/61lTQ4omc+L._AC_SY355_.jpg",
     "inStock": true,
     "categoryId": "fgsa2142fa"
   },
@@ -25,7 +25,7 @@
     "price": 80,
     "currency": "USD",
     "delivery": true,
-    "thumbnail": "https://mechanicalkeyboards.com/shop/images/products/large_2017_Disco_White_Caps_1.png",
+    "thumbnail": "https://m.media-amazon.com/images/I/71cjqdf9sfL._AC_SX355_.jpg",
     "inStock": false,
     "categoryId": "fgsa2142fa"
   },

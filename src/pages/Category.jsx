@@ -12,21 +12,15 @@ const Category = () => {
     data => data.categoryId === categoryId
   );
 
-  // console.log({ productsList: products, filterProduct: filterCategory });
-
   const cart = useCart();
   const setCart = useUpdateCart();
 
   const toaster = useToaster();
 
-  console.log({ cart });
-
-  const handleAddToCard = (id, price) => {
+  const handleAddToCard = (id, price, name) => {
     const isInCart = cart.find(item => item.id === id);
 
     if (isInCart) {
-      console.log('Inside if Statement');
-
       setCart(val =>
         val.map(data => {
           return data.id === id
@@ -35,18 +29,13 @@ const Category = () => {
         })
       );
     } else {
-      console.log('Inside else statement');
-
       setCart(val => val.concat({ id, quantity: 1, price }));
     }
 
-    toaster.push(
-      displayMessage('info', `The item id is ${id} and the price is ${price}`),
-      {
-        placement: 'topCenter',
-        duration: 4000,
-      }
-    );
+    toaster.push(displayMessage('info', `${name} added to Cart`), {
+      placement: 'topCenter',
+      duration: 4000,
+    });
   };
 
   return (
