@@ -1,12 +1,24 @@
-import { Col, Container, Divider, Row } from 'rsuite';
+import { Col, Container, Divider, Row, useToaster } from 'rsuite';
 import { useCart, useUpdateCart } from '../misc/cart.context';
 import CheckoutCard from '../components/CheckoutCard';
+import { displayMessage } from '../misc/helper';
 
 const Checkout = () => {
   const cart = useCart();
   const setcart = useUpdateCart();
 
+  const toaster = useToaster();
+
   const isCartEmpty = cart.length == 0 ? true : false;
+
+  const displayEmptyAlt = () => {
+    if (isCartEmpty) {
+      toaster.push(displayMessage('warning', 'Cart is Empty'), {
+        placement: 'topCenter',
+        duration: 5000,
+      });
+    }
+  };
 
   const totalPrice = cart.reduce((accumulator, currData) => {
     return accumulator + currData.quantity * currData.price;
@@ -72,6 +84,14 @@ const Checkout = () => {
               </tr>
             </tfoot>
           </table>
+        </Row>
+      )}
+      {isCartEmpty && (
+        <Row>
+          <Col>
+            {displayEmptyAlt()}
+            <strong>No items has Added to Cart !</strong>
+          </Col>
         </Row>
       )}
     </Container>

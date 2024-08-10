@@ -4,6 +4,7 @@ import { Col, Container, Row, useToaster } from 'rsuite';
 import ProductCard from '../components/ProductCard';
 import { displayMessage } from '../misc/helper';
 import { useCart, useUpdateCart } from '../misc/cart.context';
+import FilterCategory from '../components/FilterCategory';
 
 const Category = () => {
   const { categoryId } = useParams();
@@ -40,10 +41,13 @@ const Category = () => {
 
   return (
     <div>
-      <h2>Category {categoryId}</h2>
       <Container>
         <Row>
-          <Col as="ul">
+          <Col sm={24} md={12} lg={12}>
+            <FilterCategory />
+          </Col>
+          <Col as="ul" sm={24} md={12} lg={12}>
+            <h2>Category {categoryId}</h2>
             {filterCategory.map(data => (
               <ProductCard
                 key={data.id}
