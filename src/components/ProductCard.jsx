@@ -10,8 +10,6 @@ const ProductCard = ({
   delivery,
   handleAddToCard,
 }) => {
-  // const [cart, setCart] = useCartUpdates();
-
   return (
     <Row as="li">
       <h4>{name}</h4>
