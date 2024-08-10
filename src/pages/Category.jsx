@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import products from '../database/products.json';
 import { Col, Container, Row, useToaster } from 'rsuite';
 import ProductCard from '../components/ProductCard';
-// import { useEffect, useState } from 'react';
 import { displayMessage } from '../misc/helper';
 import { useCart, useUpdateCart } from '../misc/cart.context';
 
