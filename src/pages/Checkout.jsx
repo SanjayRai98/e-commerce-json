@@ -50,8 +50,8 @@ const Checkout = () => {
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Quantity</th>
                 <th>Price</th>
+                <th>Quantity</th>
               </tr>
             </thead>
             <tbody>

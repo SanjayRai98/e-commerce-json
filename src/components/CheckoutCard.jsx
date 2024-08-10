@@ -10,7 +10,6 @@ const CheckoutCard = props => {
     return (
       <tr>
         <th>{name}</th>
-        <th>{quantity}</th>
         <th>{price}</th>
         <th>
           <Button appearance="primary" onClick={() => handleIncreseCart(id)}>
