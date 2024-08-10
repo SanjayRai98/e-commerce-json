@@ -6,23 +6,26 @@ import NavLayout from './components/NavLayout';
 import Checkout from './pages/Checkout';
 import NotFound from './pages/NotFound';
 import 'rsuite/dist/rsuite.min.css';
+import { CartProvider } from './misc/cart.context';
 
 function App() {
   return (
-    <Container>
-      <Row>
-        <NavLayout />
-      </Row>
-      <Divider />
-      <Row>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/category/:categoryId" element={<Category />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Row>
-    </Container>
+    <CartProvider>
+      <Container>
+        <Row>
+          <NavLayout />
+        </Row>
+        <Divider />
+        <Row>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/category/:categoryId" element={<Category />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Row>
+      </Container>
+    </CartProvider>
   );
 }
 

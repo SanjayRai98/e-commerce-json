@@ -2,8 +2,9 @@ import { useParams } from 'react-router-dom';
 import products from '../database/products.json';
 import { Col, Container, Row, useToaster } from 'rsuite';
 import ProductCard from '../components/ProductCard';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import { displayMessage } from '../misc/helper';
+import { useCart, useUpdateCart } from '../misc/cart.context';
 
 const Category = () => {
   const { categoryId } = useParams();
@@ -14,16 +15,8 @@ const Category = () => {
 
   // console.log({ productsList: products, filterProduct: filterCategory });
 
-  const [cart, setCart] = useState(() => {
-    const persitedValue = localStorage.getItem('shoppingCart');
-
-    return persitedValue ? JSON.parse(persitedValue) : [];
-  });
-
-  useEffect(() => {
-    localStorage.setItem('shoppingCart', JSON.stringify(cart));
-    console.log('in useEfect Hooks');
-  }, [cart]);
+  const cart = useCart();
+  const setCart = useUpdateCart();
 
   const toaster = useToaster();
 
