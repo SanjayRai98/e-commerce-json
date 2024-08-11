@@ -54,7 +54,7 @@
     "name": "Sennheiser PC 3 Chat",
     "price": 60,
     "currency": "USD",
-    "delivery": false,
+    "delivery": true,
     "thumbnail": "https://images-na.ssl-images-amazon.com/images/I/61kIoNSe3VL._SL1500_.jpg",
     "inStock": true,
     "categoryId": "xasgy42fa"
