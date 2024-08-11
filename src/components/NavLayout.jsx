@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Container, Header, Nav, Navbar } from 'rsuite';
+import { Avatar, Container, Header, Nav, Navbar } from 'rsuite';
 import { useCart } from '../misc/cart.context';
 import { Icon } from '@rsuite/icons';
 import { FaShoppingBag } from 'react-icons/fa';
@@ -20,18 +20,20 @@ const NavLayout = () => {
   return (
     <Container>
       <Header>
-        <Navbar appearance="inverse">
+        <Navbar appearance="default">
           <Nav>
-            <Nav.Item as={Link} to="/">
+            <Nav.Item as={Link} to="/" className="text-md">
               Home
             </Nav.Item>
           </Nav>
 
           <Nav pullRight>
-            <Nav.Item as={Link} to="/checkout">
-              <Icon as={FaShoppingBag} size="2em" />
-              <span>{computeData.quantity}</span>
-              <span>${computeData.price} </span>
+            <Nav.Item as={Link} to="/checkout" className="flex p-0">
+              <Icon as={FaShoppingBag} size="26px" />
+              <Avatar circle color="cyan" className="cart-value">
+                {computeData.quantity}
+              </Avatar>
+              <div className="text-md">${computeData.price} </div>
             </Nav.Item>
           </Nav>
         </Navbar>

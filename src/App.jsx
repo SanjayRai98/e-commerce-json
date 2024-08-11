@@ -7,15 +7,17 @@ import Checkout from './pages/Checkout';
 import NotFound from './pages/NotFound';
 import 'rsuite/dist/rsuite.min.css';
 import { CartProvider } from './misc/cart.context';
+import './styles/styles.css';
+import './styles/common.css';
 
 function App() {
   return (
     <CartProvider>
-      <Container>
-        <Row>
+      <Container className="main-container">
+        <Row className="fixed hw-100 w-80">
           <NavLayout />
         </Row>
-        <Divider />
+        <Divider className="mt-10" />
         <Row>
           <Routes>
             <Route path="/" element={<Home />} />

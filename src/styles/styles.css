@@ -1,0 +1,11 @@
+.main-container {
+  padding: 0 10%;
+  background-color: #f7f7fa;
+  min-height: 100vh;
+}
+
+.cart-value {
+  margin: auto 10px;
+  height: 26px;
+  width: 26px;
+}
