@@ -1,19 +1,30 @@
 import { Checkbox, CheckboxGroup, Row } from 'rsuite';
 
-const FilterCategory = ({ handleFilter, displayedProduct, totalProduct }) => {
+const FilterCategory = ({
+  handleFilter,
+  filterValue,
+  displayedProduct,
+  totalProduct,
+}) => {
   return (
     <div>
-      FilterCategory
+      <h3 className="text-center">Filter</h3>
       <Row>
         <CheckboxGroup name="filter">
           <Checkbox value="inStock" onChange={handleFilter}>
-            In Stock
+            <span className={filterValue.inStock ? 'green' : 'grey'}>
+              In Stock
+            </span>
           </Checkbox>
           <Checkbox value="delivery" onChange={handleFilter}>
-            Can Deliver
+            <span className={filterValue.delivery ? 'green' : 'grey'}>
+              Can Deliver
+            </span>
           </Checkbox>
           <Checkbox value="expensive" onChange={handleFilter}>
-            Expensive ($100+)
+            <span className={filterValue.expensive ? 'green' : 'grey'}>
+              Expensive ($100+)
+            </span>
           </Checkbox>
         </CheckboxGroup>
       </Row>

@@ -9,17 +9,19 @@ const CheckoutCard = props => {
   if (name) {
     return (
       <tr>
-        <th>{name}</th>
-        <th>{price}</th>
-        <th>
-          <Button appearance="primary" onClick={() => handleIncreseCart(id)}>
-            +
-          </Button>
-          <span>{quantity}</span>
-          <Button appearance="primary" onClick={() => handleDecreseCart(id)}>
-            -
-          </Button>
-        </th>
+        <td>{name}</td>
+        <td>{price}</td>
+        <td className="flex">
+          <div className="quantity-container">
+            <Button appearance="primary" onClick={() => handleIncreseCart(id)}>
+              +
+            </Button>
+            <span className="p-lr-12">{quantity}</span>
+            <Button appearance="primary" onClick={() => handleDecreseCart(id)}>
+              -
+            </Button>
+          </div>
+        </td>
       </tr>
     );
   }

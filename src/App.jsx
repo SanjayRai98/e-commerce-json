@@ -14,10 +14,10 @@ function App() {
   return (
     <CartProvider>
       <Container className="main-container">
-        <Row className="fixed hw-100 w-80">
+        <Row className="fixed w-80 index-100">
           <NavLayout />
         </Row>
-        <Divider className="mt-10" />
+        <Divider className="mt-10-vh" />
         <Row>
           <Routes>
             <Route path="/" element={<Home />} />

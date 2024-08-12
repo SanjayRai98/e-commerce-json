@@ -1,13 +1,13 @@
 import { Container, Row } from 'rsuite';
-import CatergoryCard from '../components/CatergoryCard';
+import CategoryCard from '../components/CategoryCard';
 import categories from '../database/categories.json';
 
 const Home = () => {
   return (
     <Container>
-      <Row>
+      <Row className="p-lr-10">
         {categories.map(data => (
-          <CatergoryCard
+          <CategoryCard
             key={data.id}
             id={data.id}
             name={data.name}

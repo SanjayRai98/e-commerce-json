@@ -6,9 +6,12 @@ import { displayMessage } from '../misc/helper';
 import { useCart, useUpdateCart } from '../misc/cart.context';
 import FilterCategory from '../components/FilterCategory';
 import { useState } from 'react';
+import categories from '../database/categories.json';
 
 const Category = () => {
   const { categoryId } = useParams();
+
+  const currentCategory = categories.filter(data => data.id === categoryId);
 
   const cart = useCart();
   const setCart = useUpdateCart();
@@ -124,35 +127,40 @@ const Category = () => {
   };
 
   return (
-    <div>
-      <Container>
-        <Row>
-          <Col sm={24} md={12} lg={12}>
-            <FilterCategory
-              handleFilter={handleFilter}
-              displayedProduct={filterCategory.length}
-              totalProduct={originalFilterProducts.length}
+    <Container className="p-lr-30">
+      <Row>
+        <Col className="filter-container">
+          <FilterCategory
+            handleFilter={handleFilter}
+            filterValue={filterValue}
+            displayedProduct={filterCategory.length}
+            totalProduct={originalFilterProducts.length}
+          />
+        </Col>
+        <Col
+          as="ul"
+          sm={24}
+          md={16}
+          lg={16}
+          className="products-container text-center"
+        >
+          <h2 className="mb-35">{currentCategory[0].name}</h2>
+          {filterCategory.map(data => (
+            <ProductCard
+              key={data.id}
+              id={data.id}
+              name={data.name}
+              price={data.price}
+              thumbnail={data.thumbnail}
+              inStock={data.inStock}
+              currency={data.currency}
+              delivery={data.delivery}
+              handleAddToCard={handleAddToCard}
             />
-          </Col>
-          <Col as="ul" sm={24} md={12} lg={12}>
-            <h2>Category {categoryId}</h2>
-            {filterCategory.map(data => (
-              <ProductCard
-                key={data.id}
-                id={data.id}
-                name={data.name}
-                price={data.price}
-                thumbnail={data.thumbnail}
-                inStock={data.inStock}
-                currency={data.currency}
-                delivery={data.delivery}
-                handleAddToCard={handleAddToCard}
-              />
-            ))}
-          </Col>
-        </Row>
-      </Container>
-    </div>
+          ))}
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

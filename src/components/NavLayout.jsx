@@ -22,13 +22,17 @@ const NavLayout = () => {
       <Header>
         <Navbar appearance="default">
           <Nav>
-            <Nav.Item as={Link} to="/" className="text-md">
+            <Nav.Item as={Link} to="/" className="text-md b-radius-15 home-nav">
               Home
             </Nav.Item>
           </Nav>
 
           <Nav pullRight>
-            <Nav.Item as={Link} to="/checkout" className="flex p-0">
+            <Nav.Item
+              as={Link}
+              to="/checkout"
+              className="flex p-0 p-lr-12 b-radius-15"
+            >
               <Icon as={FaShoppingBag} size="26px" />
               <Avatar circle color="cyan" className="cart-value">
                 {computeData.quantity}

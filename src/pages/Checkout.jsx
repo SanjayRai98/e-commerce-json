@@ -51,14 +51,12 @@ const Checkout = () => {
   return (
     <Container>
       <Row>
-        <Col>
-          <h2>Checkout</h2>
-        </Col>
+        <h3 className="text-center">Checkout</h3>
       </Row>
       <Divider />
       {!isCartEmpty && (
-        <Row>
-          <table>
+        <Row className="flex mt-10">
+          <table className="cart-table">
             <thead>
               <tr>
                 <th>Name</th>
@@ -80,7 +78,12 @@ const Checkout = () => {
             </tbody>
             <tfoot>
               <tr>
-                <td colSpan="3">{`Total ${totalPrice}`}</td>
+                <td colSpan="3">
+                  <div className="total-price rs-text-right rs-text-bold rs-text-uppercase">
+                    <span className="gray">Total : </span>
+                    <span>{`$${totalPrice}`}</span>
+                  </div>
+                </td>
               </tr>
             </tfoot>
           </table>
@@ -88,9 +91,9 @@ const Checkout = () => {
       )}
       {isCartEmpty && (
         <Row>
-          <Col>
+          <Col className="hw-100 rs-text-center red text-lg rs-anim-bounce-in">
             {displayEmptyAlt()}
-            <strong>No items has Added to Cart !</strong>
+            <strong>No items in Added to Cart !</strong>
           </Col>
         </Row>
       )}
