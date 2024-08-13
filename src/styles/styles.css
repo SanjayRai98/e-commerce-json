@@ -59,6 +59,10 @@ body {
   min-width: 350px;
 }
 
+.product-motion {
+  transform: translateX(500);
+}
+
 .cart-table {
   width: 80%;
   font-size: 16px;
@@ -85,7 +89,7 @@ body {
 .quantity-container {
   width: max-content;
   border-radius: 8px;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #dddddd;
 }
 
@@ -93,5 +97,21 @@ body {
   .filter-container {
     position: static;
     margin-bottom: 50px;
+  }
+
+  .products-container {
+    float: none;
+  }
+
+  .product {
+    min-width: 10px;
+    width: 80vw;
+  }
+
+  .cate-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

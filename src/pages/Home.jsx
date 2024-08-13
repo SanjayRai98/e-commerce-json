@@ -5,7 +5,7 @@ import categories from '../database/categories.json';
 const Home = () => {
   return (
     <Container>
-      <Row className="p-lr-10">
+      <Row className="p-lr-10 ">
         {categories.map(data => (
           <CategoryCard
             key={data.id}

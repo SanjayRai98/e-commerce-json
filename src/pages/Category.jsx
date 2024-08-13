@@ -127,8 +127,8 @@ const Category = () => {
   };
 
   return (
-    <Container className="p-lr-30">
-      <Row>
+    <Container className="p-lr-30 pb-vh-10">
+      <Row className="cate-con">
         <Col className="filter-container">
           <FilterCategory
             handleFilter={handleFilter}
@@ -142,7 +142,7 @@ const Category = () => {
           sm={24}
           md={16}
           lg={16}
-          className="products-container text-center"
+          className="products-container text-center over-hidden"
         >
           <h2 className="mb-35">{currentCategory[0].name}</h2>
           {filterCategory.map(data => (

@@ -1,4 +1,5 @@
 import { Checkbox, CheckboxGroup, Row } from 'rsuite';
+import { motion } from 'framer-motion';
 
 const FilterCategory = ({
   handleFilter,
@@ -7,7 +8,19 @@ const FilterCategory = ({
   totalProduct,
 }) => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, x: -200 }}
+      whileInView={{
+        opacity: 1,
+        x: 1,
+        transition: {
+          type: 'spring',
+          bounce: 0.4,
+          duration: 1.4,
+        },
+      }}
+      viewport={{ once: true, amount: 0.4 }}
+    >
       <h3 className="text-center">Filter</h3>
       <Row>
         <CheckboxGroup name="filter">
@@ -33,7 +46,7 @@ const FilterCategory = ({
           Showing {displayedProduct} out of {totalProduct}
         </div>
       </Row>
-    </div>
+    </motion.div>
   );
 };
 

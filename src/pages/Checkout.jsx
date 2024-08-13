@@ -2,6 +2,7 @@ import { Col, Container, Divider, Row, useToaster } from 'rsuite';
 import { useCart, useUpdateCart } from '../misc/cart.context';
 import CheckoutCard from '../components/CheckoutCard';
 import { displayMessage } from '../misc/helper';
+import { motion } from 'framer-motion';
 
 const Checkout = () => {
   const cart = useCart();
@@ -51,43 +52,71 @@ const Checkout = () => {
   return (
     <Container>
       <Row>
-        <h3 className="text-center">Checkout</h3>
+        <motion.div
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              bounce: 0.4,
+              duration: 1,
+            },
+          }}
+          viewport={{ once: true, amount: 0.4 }}
+        >
+          <h3 className="text-center">Checkout</h3>
+        </motion.div>
       </Row>
       <Divider />
       {!isCartEmpty && (
-        <Row className="flex mt-10">
-          <table className="cart-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cart.map(data => (
-                <CheckoutCard
-                  key={data.id}
-                  id={data.id}
-                  quantity={data.quantity}
-                  price={data.price}
-                  handleIncreseCart={handleIncreseCart}
-                  handleDecreseCart={handleDecreseCart}
-                />
-              ))}
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colSpan="3">
-                  <div className="total-price rs-text-right rs-text-bold rs-text-uppercase">
-                    <span className="gray">Total : </span>
-                    <span>{`$${totalPrice}`}</span>
-                  </div>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </Row>
+        <motion.div
+          initial={{ opacity: 0, y: 200 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              bounce: 0.4,
+              duration: 1,
+            },
+          }}
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          <Row className="flex mt-10">
+            <table className="cart-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cart.map(data => (
+                  <CheckoutCard
+                    key={data.id}
+                    id={data.id}
+                    quantity={data.quantity}
+                    price={data.price}
+                    handleIncreseCart={handleIncreseCart}
+                    handleDecreseCart={handleDecreseCart}
+                  />
+                ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colSpan="3">
+                    <div className="total-price rs-text-right rs-text-bold rs-text-uppercase">
+                      <span className="gray">Total : </span>
+                      <span>{`$${totalPrice}`}</span>
+                    </div>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </Row>
+        </motion.div>
       )}
       {isCartEmpty && (
         <Row>
