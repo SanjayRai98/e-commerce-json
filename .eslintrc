@@ -23,6 +23,13 @@
       "version": "detect",
     },
   },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "lines": 80,
+      },
+    },
+  },
   "rules": {
     "react/prop-types": "off",
     "react-hooks/rules-of-hooks": "error",
